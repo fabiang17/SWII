@@ -25,5 +25,8 @@ public class ControladorArchivo {
         FileInputStream fin=new FileInputStream(f);
         br=new BufferedReader(new InputStreamReader(fin));
     }
-    
+
+    public String getPrimeraLinea() {
+        return "AIAIAIAIAIAI";
+    }
 }
