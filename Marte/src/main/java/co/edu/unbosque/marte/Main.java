@@ -23,8 +23,9 @@ public class Main {
         //Variables
         BufferedReader br = null;
         Marte Marte = new Marte();
-        Robot robot = new Robot();
+        
         Coordenada CoordenadaAuxiliar = new Coordenada();
+        Robot robot = new Robot(CoordenadaAuxiliar);
         ArrayList<String> strListaMovimiento = new ArrayList<String>();
         Movimiento movimiento  = new Movimiento();
         String strDatosMovimiento;
@@ -59,7 +60,7 @@ public class Main {
                     
                     for(int i=0; i<strDatosMovimiento.length();i++)
                     {
-                        movimiento.ejecutarMovimiento(Character.toString(strDatosMovimiento.charAt(i)), CoordenadaAuxiliar);
+                        movimiento.ejecutarMovimiento(CoordenadaAuxiliar, strDatosMovimiento.charAt(i));
                         if(CoordenadaAuxiliar.intCoordenadaX > Marte.x || CoordenadaAuxiliar.intCoordenadaY > Marte.y )
                         {
                             System.out.println("El robot se ha salido del área de cobertura ");
